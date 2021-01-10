@@ -18,9 +18,14 @@ if (isset($_SESSION["isler"])){
                 <br>
                 Projenin gelişimini
                 Githup adresi üzerinden takip edebilirsiniz:
-                
+                <a href="http://odev.ahmetercan.com.tr">https://github.com/AhmetErcan/tolovedo</a>
+            </div>
 
-
+            <div class="alert alert-success" role="alert">
+                <strong>NASIL KULLANILIR</strong> <br>
+                1- Yeşil Butona Tıklayarak Yeni Bir İş Ekleyin <br>
+                2- Kart'ın üstündeki (##) işaretinden tutup sürükleyin <br>
+                3- İstediğiniz tabloya bırakın.
             </div>
         </div>
         <div class="col-md-12">
@@ -37,19 +42,11 @@ if (isset($_SESSION["isler"])){
                         <!-- ongoing -->
                         <h1 class="mt-2">Yapılacaklar</h1>
                         <hr>
-                        <div class="card portlet">
-                            <h5 class="card-header portlet-header"># (Buradan Sürükle)</h5>
-                            <div class="card-body">
-                                <h5 class="card-title">Mesaj Başlığı</h5>
-                                <p class="card-text">
-                                    Mesaj İçeriği Burada
-                                </p>
-                            </div>
-                        </div>
+
                         <?php if (isset($yapilacaklar)){
                         foreach ($yapilacaklar as $item){ ?>
                             <div class="card portlet" data-id="$item['id']">
-                                <h5 class="card-header portlet-header">##</h5>
+                                <h5 class="card-header portlet-header" style="background-color:<?=$item['renk']; ?> ">## | <?=$item['konu']; ?></h5>
                                 <div class="card-body">
                                     <h5 class="card-title"><?=$item['isbaslik']; ?></h5>
                                     <p class="card-text">
@@ -60,6 +57,17 @@ if (isset($_SESSION["isler"])){
                                 </div>
                             </div>
                         <?php }} ?>
+                        <?php if (empty($yapilacaklar)){ ?>
+                            <div class="card portlet" >
+                                <h5 class="card-header portlet-header">## (Buradan Sürükle)</h5>
+                                <div class="card-body">
+                                    <h5 class="card-title">TEST BAŞLIK</h5>
+                                    <p class="card-text">
+                                        Siz yeni bir iş eklediğinizde bu kutu gizlenecek
+                                    </p>
+                                </div>
+                            </div>
+                        <?php } ?>
 
                     </div>
 
@@ -76,18 +84,6 @@ if (isset($_SESSION["isler"])){
                         <h1 class="mt-2">Biten İşler</h1>
                         <hr>
 
-                        <div class="card portlet">
-                            <h5 class="card-header portlet-header"># (Buradan Sürükle)</h5>
-                            <div class="card-body">
-                                <h5 class="card-title">Mesaj Başlığı</h5>
-                                <p class="card-text">
-                                    Mesaj İçeriği Burada
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="javascript:void(0)" class="btn btn-sm btn-danger">SİL</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

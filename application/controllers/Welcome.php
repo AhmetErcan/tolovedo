@@ -32,6 +32,8 @@ class Welcome extends CI_Controller {
         $yapilacaklar = $tumisler["yapilacaklar"];
         $is = array(
             "id" => $benzersiz_id,
+            "konu" => strip_tags(trim($this->input->post("konu"))),
+            "renk" => $this->input->post('renk'),
             "isbaslik" => strip_tags(trim($this->input->post("isbaslik"))),
             "mesaj"    => strip_tags(trim($this->input->post("mesaj"))),
         );

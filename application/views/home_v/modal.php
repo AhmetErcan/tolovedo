@@ -9,6 +9,18 @@
             </div>
             <div class="modal-body">
                 <form method="post" action="<?=base_url("Welcome/iskaydet")?>">
+                    <div class="row">
+                        <div class="form-group col-md-7">
+                            <label for="recipient-name" class="col-form-label">Konu:</label>
+                            <input type="text" name="konu" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="recipient-name" class="col-form-label">Başlık Renk:</label>
+                            <input type="color" name="renk" value="#ecf0f1" class="form-control" id="recipient-name">
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">İş Başlığı:</label>
                         <input type="text" name="isbaslik" class="form-control" id="recipient-name">
